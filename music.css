@@ -1,0 +1,194 @@
+:root {
+  --primary:#0d1b2a;
+  --accent:#14191fc7;
+   --battons:#1222184f;
+  --light:#f8f9fa;
+  --text:#333;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Segoe UI",sans-serif;
+}
+
+body{
+  background:var(--light);
+  color:var(--text);
+}
+
+/* HEADER */
+header{
+  background:var(--primary);
+  color:white;
+  padding:15px 20px;
+width:100%;
+position:fixed;
+top:0;
+z-index:100;
+opacity:0.9;
+}
+
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  max-width:1100px;
+  margin:auto;
+}
+
+.menu a{
+  color:white;
+  margin-left:15px;
+  text-decoration:none;
+}
+
+/* HERO */
+.hero{
+  background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+  url('images/Awardizo.jpeg') center/cover no-repeat;
+  color:white;
+  text-align:center;
+  padding:60px 20px;
+}
+
+/* SEARCH */
+.search-box{
+  max-width:1100px;
+  margin:20px auto;
+  padding:0 20px;
+}
+
+.search-box input{
+  width:100%;
+  padding:12px;
+  border-radius:6px;
+  border:1px solid #ccc;
+}
+
+/* LAYOUT */
+.music-layout{
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  gap:25px;
+  max-width:1100px;
+  margin:auto;
+  padding:20px;
+}
+
+/* PLAYER */
+.player{
+  background:white;
+  padding:25px;
+  border-radius:12px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+  text-align:center;
+}
+
+.player h2{
+  margin-bottom:5px;
+}
+
+.player p{
+  color:gray;
+  margin-bottom:15px;
+}
+
+.player audio{
+  width:100%;
+}
+
+/* DOWNLOAD BUTTON */
+.btn{
+  display:inline-block;
+  margin-top:15px;
+  padding:10px 15px;
+  background:rgba(255, 0, 55, 0.849);
+  color:white;
+  border-radius:6px;
+  text-decoration:none;
+}
+
+.btn:hover{
+  opacity:0.85;
+}
+
+/* SIDEBAR */
+.sidebar{
+  background:white;
+  border-radius:12px;
+  padding:10px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.05);
+  max-height:450px;
+  overflow-y:auto;
+}
+/* 1. The entire scrollbar area */
+.sidebar::-webkit-scrollbar {
+  width: 5px;                /* Width of vertical scrollbar */
+  height: 12px;  
+  background-color: rgb(255, 255, 255);             /* Height of horizontal scrollbar */
+}
+
+.sidebar::-webkit-scrollbar:hover {
+  width: 5px;  
+  /* Width of vertical scrollbar */
+  height: 10px;  
+   /* Height of horizontal scrollbar */
+ background: var(--accent)
+           
+}
+.song-item{
+  color: #333;
+  padding:12px;
+  border-bottom:1px solid #eee;
+  cursor:pointer;
+  transition:0.2s;
+}
+
+.song-item:hover{
+  background:#f1f1f1;
+}
+
+.song-item.active{
+  background:#ffff;
+  color:rgba(255, 0, 43, 0.938);
+}
+
+.engineers {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  padding: 10px;
+  color: #b9750e;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  align-content: center;
+}
+.engineers p {
+  max-width: 300px;
+}
+/* MOBILE */
+@media (max-width: 600px) {
+  .music-layout{
+    grid-template-columns:1fr;
+  }
+
+  .sidebar{
+  background:white;
+  border-radius:12px;
+  padding:10px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.05);
+  max-height:300px;
+  overflow-y:auto;
+}
+}
+
+/* FOOTER */
+footer{
+  margin-top:30px;
+  text-align:center;
+  padding:20px;
+  background:var(--primary);
+  color:white;
+}

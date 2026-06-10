@@ -1,0 +1,260 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ALC Music Library</title>
+<link rel="stylesheet" href="music.css">
+<link rel="stylesheet" href="footer.css">
+
+<style>
+/* HEADER */
+header {
+  background: var(--primary);
+  color: white;
+  padding: 15px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.logo {
+  font-weight: bold;
+}
+
+.menu {
+  display: flex;
+  gap: 20px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+}
+
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+}
+
+@media(max-width:768px){
+  .menu {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: var(--primary);
+    flex-direction: column;
+    display: none;
+    text-align: center;
+  }
+
+  .menu.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo"> Na <span style="color: rgb(8, 163, 8);">Tumfwe</span> Music</div>
+    <p class="by" style="color: lightgray; font-size: 14px; padding: 10px; width: fit-content; text-align: center;">By Babbage Zambia</p>
+  </div>
+
+</header>
+
+<section class="hero">
+  <h1>Music Library</h1>
+  <p>Experience powerful music</p>
+</section>
+
+<!-- SEARCH -->
+<div class="search-box">
+  <input type="text" id="search" placeholder="Search songs..." onkeyup="searchSongs()">
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="music-layout">
+
+  <!-- MAIN PLAYER -->
+  <div class="player">
+    <h2 id="title"> Awardizo Zambia</h2>
+    <p id="artist">Awardizo Zambia - Nkondo</p>
+
+    <audio id="mainAudio" controls>
+      <source id="audioSource" src="music/Awadizo-ft-Roxy Kelly- Nkondo-Prod by-J Kabs.mp3" type="audio/mpeg">
+    </audio>
+
+    <a id="downloadBtn" class="btn" download>Download Song</a>
+  </div>
+  
+
+  <!-- SIDEBAR -->
+  <div class="sidebar" id="songList">
+  <div class="song-item active"
+      onclick="playSong(this,'Awardizo','Nkondo ft Romax & Rox Kelly','music/Awadizo-ft-Roxy Kelly- Nkondo-Prod by-J Kabs.mp3')">
+Awardizo - Nkondo
+    </div>
+
+    <div class="song-item"
+      onclick="playSong(this,' Awadizo ft Chezo the Admalu','Hallo My Baby','music/Awardizo_ft_Chezo_-_Halo_(Prod_by_J_Kabs)_053540.mp3.mp3')">
+     Awadizo ft Chezo the Adimalu - Hello my Baby
+    </div>
+
+     <div class="song-item"
+      onclick="playSong(this,'Awardizo','Wangu','music/Wangu_by_Awardizo_prod_by_Jkabs.mp3')">
+   Awardizo ft Promise - Wangu 
+    </div>
+    
+    <div class="song-item"
+    onclick="playSong(this,'Chezo the Admalu','Duduke Cover','music/Duduke-by-Chezo.mp3')">
+    Chezo the Adimalu - Duduke cover
+    </div>
+
+    <div class="song-item"
+    onclick="playSong(this,'Victoria Orenze ','Room','music/ROOM_Victoria_Orenze.mp3')">
+    Victoria Orenze - Room
+    </div>
+
+    <div class="song-item"
+    onclick="playSong(this,'Victoria Orenze ','When We Pray','music/Victoria_Orenze_-_When_We_Pray.mp3')">
+    Victoria Orenze - When We Pray
+    </div>
+
+    <div class="song-item"
+    onclick="playSong(this,'Pastor Moris Musenge ','Natemwa efyo mwaba','music/NATEMWA_EFYOMWABA.mp3')">
+    Pastor Moris Musenge - Natemwa efyo mwaba
+    </div>
+
+    <div class="song-item"
+    onclick="playSong(this,'Pastor Moris Musenge ','Muli Imwe','music/muli_imwe.mp3')">
+    Pastor Moris Musenge - Muli Imwe
+    </div>
+
+    <div class="song-item"
+    onclick="playSong(this,'Muke Zambia','Ukulambalala Pakupepa','music/Muke Zambia_ Ukulambalala_Pakupepa_Echishimba.mp3')">
+    Muke Zambia - Ukulambalala Pakupepa
+    </div>
+   
+    <div class="song-item"
+    onclick="playSong(this,'Chezo the Admalu','Matero','music/Chezo_aka_ Adimalu_Matero.mp3')">
+     Chezo_aka_ Adimalu - Matero
+    </div>
+   
+    <div class="song-item"
+    onclick="playSong(this,'Blaze Zambia ','Ilampi','music/ILAMPI.mp3')">
+    Blaze Zambia - Ilampi
+    </div>
+
+        <div class="song-item"
+    onclick="playSong(this,'KV Nice ft Yo Maps ','Kale','music/Kv-Nice-ft-Yo-Maps_KALE.mp3')">
+    KV Nice ft Yo Maps - Kale
+    </div>
+
+    <div class="song-item"
+    onclick="playSong(this,'Chezo Adimalu ','Behind a Man','music/Chezo ft Promise - Behind a Man_mix.mp3')">
+    Chezo ft Promise - Behind every Successful man
+    </div>
+
+    <div class="song-item"
+    onclick="playSong(this,'Promise','Ma Single Ladies','music/Promise_Masingle_Ladie.mp3')">
+    Promise - Ma Single Ladies
+    </div>
+
+    <div class="song-item"
+    onclick="playSong(this,'Chezo Aka Admalu','Feeling beyond expression','music/Admalu Zambia.mp3')">
+   Chezo Aka Admalu - Feeling beyond expression
+    </div>
+    
+
+    <div class="song-item"
+    onclick="playSong(this,'Afunika','Teti Fye Nkulabe','music/Afunika_Teti_Fye_Nkulabe.mp3')">
+    Afunika - Teti Fye Nkulabe
+    </div>
+
+    <div class="song-item"
+    onclick="playSong(this,'JK ft Nalu','Forever','music/JK-Forever.mp3')">
+   JK ft Nalu - Forever
+    </div>
+   
+    
+
+    <!-- Always add the new song above this comment-->
+  </div>
+  </div>
+  </div>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-left">
+      <p>© 2026 Awardizo Zambia</p>
+    </div>
+  </div>
+
+</footer>
+
+<script>
+
+// DEFAULT DOWNLOAD
+document.getElementById("downloadBtn").href = "music/Awadizo-ft-Roxy Kelly- Nkondo-Prod by-J Kabs.mp3";
+
+// PLAY SONG FUNCTION
+function playSong(element, title, artist, src) {
+
+  document.getElementById("title").innerText = title;
+  document.getElementById("artist").innerText = artist;
+
+  let audio = document.getElementById("mainAudio");
+  let source = document.getElementById("audioSource");
+
+  source.src = src;
+  audio.load();
+
+  audio.loop = true; // repeat current song
+  audio.play();
+
+  document.getElementById("downloadBtn").href = src;
+
+  document.querySelectorAll(".song-item").forEach(item => {
+    item.classList.remove("active");
+  });
+
+  element.classList.add("active");
+}
+// SEARCH FUNCTION
+function searchSongs(){
+  let input = document.getElementById("search").value.toLowerCase();
+  let songs = document.querySelectorAll(".song-item");
+
+  songs.forEach(song=>{
+    let text = song.innerText.toLowerCase();
+    song.style.display = text.includes(input) ? "block" : "none";
+  });
+}
+function toggleMenu(){
+  document.getElementById("menu").classList.toggle("active");
+}
+</script>
+
+</body>
+</html>
+
