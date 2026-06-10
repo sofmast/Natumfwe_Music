@@ -1,0 +1,62 @@
+/*WRITEN BY CHARLES BANDA*/
+.footer {
+  background: #0d1b2a;
+  color: #f1f1f1;
+  padding: 20px 15px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-left p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.footer-right {
+  text-align: right;
+}
+
+.footer-right p {
+  margin: 4px 0;
+  font-size: 13px;
+}
+
+footer .callus{
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: rgb(207, 101, 39);
+    font-size: 15px;
+
+}
+
+/* Divider line (optional professional touch) */
+.footer::before {
+  content: "";
+  display: block;
+  height: 1px;
+  background: rgba(255,255,255,0.1);
+  margin-bottom: 15px;
+  opacity: 0.6;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-right {
+    text-align: center;
+    margin-top: 10px;
+    display: none;
+  }
+}
