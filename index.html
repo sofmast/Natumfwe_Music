@@ -18,6 +18,11 @@ header {
   top: 0;
   z-index: 1000;
 }
+.logal {
+  width: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+}
 
 .nav {
   display: flex;
@@ -45,8 +50,24 @@ header {
   display: none;
   cursor: pointer;
 }
+/* HERO */
+.hero{
+  background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+  url('images/recod.jpg') center/cover no-repeat;
+  color:white;
+  text-align:center;
+  padding:60px 20px;
+}
 
 @media(max-width:768px){
+  /* HERO */
+.hero{
+  background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+  url('images/recod.jpg') center/cover no-repeat;
+  color:white;
+  text-align:center;
+  padding:60px 20px;
+}
   .menu {
     position: absolute;
     top: 60px;
@@ -95,6 +116,7 @@ header {
 
   <!-- MAIN PLAYER -->
   <div class="player">
+    <div><img src="images/recod.jpg" alt="record" width="50" class="logal"></div>
     <h2 id="title"> Awardizo Zambia</h2>
     <p id="artist">Awardizo Zambia - Nkondo</p>
 
